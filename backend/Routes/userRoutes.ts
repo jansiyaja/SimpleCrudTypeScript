@@ -1,10 +1,10 @@
+import express from 'express';
+import { register, login, refreshToken } from '../Controllers/userContoller';
 
-import express from'express'
+const router = express.Router();
 
-import * as UserController from '../Controllers/userContoller'
-import { testController } from "../Controllers/userContoller";
+router.post('/register', register);
+router.post('/login', login);
+router.post('/refresh-token', refreshToken);
 
- const router = express.Router();
-router.get('/',testController)
-
-export default router
+export default router;
