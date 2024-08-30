@@ -6,9 +6,11 @@ import LoginPage from "./assets/Pages/LoginPage";
 import RegisterPage from "./assets/Pages/RegisterPage";
 import HomePage from "./assets/Pages/HomePage";
 import Navbar from "./assets/Components/NavBar";
+import { UserProvider } from "./assets/Components/userContext";
 
 const App: React.FC = () => {
     return (
+        <UserProvider>
         <Router>
             <Navbar />
             <Routes>
@@ -17,6 +19,7 @@ const App: React.FC = () => {
                 <Route path="/register" element={<RegisterPage />} />
             </Routes>
         </Router>
+        </UserProvider>
     );
 };
 
